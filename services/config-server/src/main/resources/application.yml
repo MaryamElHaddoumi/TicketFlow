@@ -1,20 +1,20 @@
-spring:
-  application:
-    name: config-server
-  profiles:
-    active: native
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: file:C:/Users/XENOMEX/Downloads/config-server
+  spring:
+    application:
+      name: config-server
+    cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/MaryamElHaddoumi/ticketflow-config.git
+            default-label: main
+            clone-on-start: true
 
-server:
-  port: 8888
+  server:
+    port: 8888
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka/
+      register-with-eureka: true
+      fetch-registry: true

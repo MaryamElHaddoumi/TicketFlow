@@ -1,4 +1,4 @@
 package ticketflow.event_service.dto;
 
-public class EventResponse {
+public record EventResponse(Long id) {
 }
